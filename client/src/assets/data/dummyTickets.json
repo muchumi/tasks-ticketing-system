@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "tasks": "ssl issue",
+        "status": "done",
+        "date": "10-8-2021"
+    },
+    {
+        "id": 2,
+        "tasks": "domain issue",
+        "status": "done",
+        "date": "12-9-2021"
+    },
+    {
+        "id": 3,
+        "tasks": "login feature",
+        "status": "pending",
+        "date": "8-10-2021"
+    },
+    {
+        "id": 4,
+        "tasks": "integrate MPESA Daraja API",
+        "status": "done",
+        "date": "3-10-2021"
+    },
+    {
+        "id": 5,
+        "tasks": "Deploy API to Heroku",
+        "status": "done",
+        "date": "1-10-2021"
+    }
+]

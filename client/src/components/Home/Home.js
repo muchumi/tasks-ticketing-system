@@ -32,6 +32,13 @@ const Home = () => {
         // }
     }
 
+    const handleOnResetSubmit = (e) => {
+        e.preventDefault();
+        if(!state.email){
+            alert("Please provide your email!");
+        }
+    }
+
     const switchForm = (formType) => {
         setFormLoad(formType);
     }
@@ -42,9 +49,8 @@ const Home = () => {
                     <Login handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} email={state.email} password={state.password} switchForm={switchForm} />
                 )}
                 {formLoad === "rest" && (
-                    <ResetPassword handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} email={state.email} switchForm = {switchForm} />
+                    <ResetPassword handleOnChange={handleOnChange} handleOnResetSubmit={handleOnResetSubmit} email={state.email} switchForm = {switchForm} />
                 )}
-                
             </div>
         </div>
     );
