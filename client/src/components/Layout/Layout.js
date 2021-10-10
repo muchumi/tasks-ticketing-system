@@ -6,7 +6,7 @@ import Dashboard from '../Dashboard/Dashboard.js';
 const Layout = () => {
     return(
         <div className="layout">
-            <div className="header">
+            <div className="header mb-2">
                 <Header />
             </div>
             <main className="main">
