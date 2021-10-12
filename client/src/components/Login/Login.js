@@ -33,7 +33,7 @@ const Login = ({ handleOnChange, handleOnSubmit, switchForm, email, password }) 
                                 required
                             />
                         </Form.Group>
-                        <Button type="submit" className="loginButton">login</Button>
+                        <Button type="submit" block className="loginButton">login</Button>
                     </Form>
                     <hr />
                 </Col>

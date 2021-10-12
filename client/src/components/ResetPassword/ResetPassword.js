@@ -22,7 +22,7 @@ const ResetPassword = ({ handleOnChange, handleOnResetSubmit, switchForm, email 
                                 required
                             />
                         </Form.Group>
-                        <Button type="submit" className="resetButton">Reset</Button>
+                        <Button type="submit" block  className="resetButton">Reset</Button>
                     </Form>
                     <hr />
                 </Col>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Jumbotron } from 'react-bootstrap';
 import Login from '../Login/Login.js';
 import ResetPassword from '../ResetPassword/ResetPassword.js';
 import './Home.css';
@@ -44,14 +45,14 @@ const Home = () => {
     }
     return(
         <div className="Home bg-info">
-            <div className="background-form-section">
+            <Jumbotron className="form-box">
                 {formLoad === "login" && (
                     <Login handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} email={state.email} password={state.password} switchForm={switchForm} />
                 )}
                 {formLoad === "rest" && (
                     <ResetPassword handleOnChange={handleOnChange} handleOnResetSubmit={handleOnResetSubmit} email={state.email} switchForm = {switchForm} />
                 )}
-            </div>
+            </Jumbotron>   
         </div>
     );
 };
