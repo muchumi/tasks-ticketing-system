@@ -11,8 +11,7 @@ const AddTickets = ({ handleOnChange, handleOnSubmit }) => {
                     <PageBreadcrumb page="Add New Ticket"/>
                 </Col>
             </Row>
-            <Jumbotron>
-                <h1 className="ticket-heading">Add New Ticket</h1>
+            <div className="add-ticket">
                 <Form autocomplete = "off" onSubmit = { handleOnSubmit }>
                     <Form.Group as={Row}>
                         <Form.Label column sm={3}>Client</Form.Label>
@@ -65,7 +64,7 @@ const AddTickets = ({ handleOnChange, handleOnSubmit }) => {
                     </Form.Group>
                     <Button type="submit" block variant="primary" className="mt-5 text-white">Add</Button>
                 </Form>
-            </Jumbotron>
+            </div>
         </Container>    
     );
 }

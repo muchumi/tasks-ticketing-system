@@ -1,5 +1,6 @@
-.ticket-heading{
-    font-size: 25px;
-    line-height: normal;
-    text-align: center;
+.add-ticket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
