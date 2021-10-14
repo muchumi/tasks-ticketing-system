@@ -1,72 +1,67 @@
 import React from 'react';
-import { Jumbotron, Container, Row, Col, Form, Button } from 'react-bootstrap';
-import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 import './AddTicketsForm.css';
 
-const AddTickets = ({ handleOnChange, handleOnSubmit }) => {
+const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details, date }) => {
     return(
-        <Container>
-            <Row>
-                <Col>
-                    <PageBreadcrumb page="Add New Ticket"/>
-                </Col>
-            </Row>
-            <div className="add-ticket">
-                <Form autocomplete = "off" onSubmit = { handleOnSubmit }>
-                    <Form.Group as={Row}>
-                        <Form.Label column sm={3}>Client</Form.Label>
+        <div className="add-ticket">
+            <Form autoComplete = "off" onSubmit = { handleOnSubmit }>
+                <Form.Group as={Row}>
+                    <Form.Label column sm={3}>Client</Form.Label>
+                    <Col sm={9}>
                         <Form.Control 
-                            type="text"
                             name="client"
-                            // value={client}
+                            value={client}
                             onChange={ handleOnChange }
                             placeholder="Enter Client Name"
                             required
                         />
-                    </Form.Group>
-                    <Form.Group as={Row}>
-                        <Form.Label column sm={3}>Issue</Form.Label>
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm={3}>Issue</Form.Label>
+                    <Col sm={9}>
                         <Form.Control
-                            type="text"
                             name="issue"
-                            // value={issue}
+                            value={issue}
                             onChange = { handleOnChange }
                             placeholder = "Enter Issue Found"
                             required
                         />
-                    </Form.Group>
-                    <Form.Group as={Row}>
-                        <Form.Label column sm={3}>Details</Form.Label>
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm={3}>Details</Form.Label>
+                    <Col sm={9}>
                         <Form.Control
                             as="textarea"
-                            type="text"
                             name="details"
                             rows="5"
-                            // value={details}
+                            value={details}
                             onChange = { handleOnChange }
                             placeholder = "Enter Details"
                             required
                         />
-                    </Form.Group>
-                    <Form.Group as={Row}>
-                        <Form.Label column sm={3}>
-                            Date
-                        </Form.Label>
-                        <Col sm={9}>
-                            <Form.Control
-                                type="date"
-                                name="date"
-                                // value={date}
-                                onChange={ handleOnChange }
-                                required
-                            />
-                        </Col>
-                    </Form.Group>
-                    <Button type="submit" block variant="primary" className="mt-5 text-white">Add</Button>
-                </Form>
-            </div>
-        </Container>    
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label column sm={3}>
+                        Date
+                    </Form.Label>
+                    <Col sm={9}>
+                        <Form.Control
+                            type="date"
+                            name="date"
+                            value={date}
+                            onChange={ handleOnChange }
+                            required
+                        />
+                    </Col>
+                </Form.Group>
+                <Button type="submit" block variant="info" className="mt-5 text-white">Add</Button>
+            </Form>
+        </div>  
     );
 }
 
-export default AddTickets;
+export default AddTicketsForm;

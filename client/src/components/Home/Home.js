@@ -47,10 +47,21 @@ const Home = () => {
         <div className="Home bg-info">
             <Jumbotron className="form-box">
                 {formLoad === "login" && (
-                    <Login handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} email={state.email} password={state.password} switchForm={switchForm} />
+                    <Login 
+                        handleOnChange={handleOnChange} 
+                        handleOnSubmit={handleOnSubmit} 
+                        email={state.email}
+                        password = {state.password}
+                        switchForm={switchForm} 
+                    />
                 )}
                 {formLoad === "rest" && (
-                    <ResetPassword handleOnChange={handleOnChange} handleOnResetSubmit={handleOnResetSubmit} email={state.email} switchForm = {switchForm} />
+                    <ResetPassword 
+                        handleOnChange={handleOnChange} 
+                        handleOnResetSubmit={handleOnResetSubmit} 
+                        email = {state.email}
+                        switchForm = {switchForm} 
+                    />
                 )}
             </Jumbotron>   
         </div>
