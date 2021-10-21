@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import './AddTicketsForm.css';
 
-const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details, date }) => {
+const AddTicketsForm = () => {
+    const[formData, setFormData] = useState({
+        client: "",
+        issue: "",
+        details: "",
+        date: ""
+    });
+
+    const handleOnChange = (e) => {
+        const{name, value} = e.target;
+        setFormData({
+            ...formData, [name]: value
+        });
+    }
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        console.log('Submit request received', formData);
+    }
     return(
         <div className="add-ticket">
             <Form autoComplete = "off" onSubmit = { handleOnSubmit }>
@@ -11,7 +29,7 @@ const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details
                     <Col sm={9}>
                         <Form.Control 
                             name="client"
-                            value={client}
+                            value={formData.client}
                             onChange={ handleOnChange }
                             placeholder="Enter Client Name"
                             required
@@ -23,7 +41,7 @@ const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details
                     <Col sm={9}>
                         <Form.Control
                             name="issue"
-                            value={issue}
+                            value={formData.issue}
                             onChange = { handleOnChange }
                             placeholder = "Enter Issue Found"
                             required
@@ -37,7 +55,7 @@ const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details
                             as="textarea"
                             name="details"
                             rows="5"
-                            value={details}
+                            value={formData.details}
                             onChange = { handleOnChange }
                             placeholder = "Enter Details"
                             required
@@ -52,7 +70,7 @@ const AddTicketsForm = ({ handleOnChange, handleOnSubmit, client, issue, details
                         <Form.Control
                             type="date"
                             name="date"
-                            value={date}
+                            value={formData.date}
                             onChange={ handleOnChange }
                             required
                         />
