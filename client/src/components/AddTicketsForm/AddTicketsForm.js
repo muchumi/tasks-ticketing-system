@@ -39,9 +39,6 @@ const AddTicketsForm = () => {
         setFormDataError({
             ...formDataError, client: !isClientValid
         });
-        const isIssueValid = await validateText(formData.issue);
-        const isDetailsValid = await validateText(formData.details);
-        const isDateValid = await validateText(formData.date);
     }
     return(
         <div className="add-ticket bg-light">
