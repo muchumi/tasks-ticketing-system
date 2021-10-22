@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import './AddTicketsForm.css';
+import validateText from '../../utils/validation.js';
 
 const AddTicketsForm = () => {
     const[formData, setFormData] = useState({
@@ -10,6 +11,15 @@ const AddTicketsForm = () => {
         date: ""
     });
 
+    const [formDataError, setFormDataError] = useState({
+        client: false,
+        issue: false,
+        details: false,
+        date: false
+    });
+
+    useEffect(() => {}, [formData, formDataError]);
+
     const handleOnChange = (e) => {
         const{name, value} = e.target;
         setFormData({
@@ -17,12 +27,26 @@ const AddTicketsForm = () => {
         });
     }
 
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault();
-        console.log('Submit request received', formData);
+        setFormDataError({
+            client: false,
+            issue: false,
+            details: false,
+            date: false
+        });
+        const isClientValid = await validateText(formData.client);
+        setFormDataError({
+            ...formDataError, client: !isClientValid
+        });
+        const isIssueValid = await validateText(formData.issue);
+        const isDetailsValid = await validateText(formData.details);
+        const isDateValid = await validateText(formData.date);
     }
     return(
-        <div className="add-ticket">
+        <div className="add-ticket bg-light">
+            {/* <h1 className="text-info text-center">Add A New Ticket</h1>
+            <hr/> */}
             <Form autoComplete = "off" onSubmit = { handleOnSubmit }>
                 <Form.Group as={Row}>
                     <Form.Label column sm={3}>Client</Form.Label>
@@ -32,8 +56,8 @@ const AddTicketsForm = () => {
                             value={formData.client}
                             onChange={ handleOnChange }
                             placeholder="Enter Client Name"
-                            required
                         />
+                        <Form.Text className="text-danger">{formDataError.client && "* Client is required"}</Form.Text>
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row}>
@@ -44,7 +68,6 @@ const AddTicketsForm = () => {
                             value={formData.issue}
                             onChange = { handleOnChange }
                             placeholder = "Enter Issue Found"
-                            required
                         />
                     </Col>
                 </Form.Group>
@@ -58,7 +81,6 @@ const AddTicketsForm = () => {
                             value={formData.details}
                             onChange = { handleOnChange }
                             placeholder = "Enter Details"
-                            required
                         />
                     </Col>
                 </Form.Group>
@@ -72,7 +94,6 @@ const AddTicketsForm = () => {
                             name="date"
                             value={formData.date}
                             onChange={ handleOnChange }
-                            required
                         />
                     </Col>
                 </Form.Group>
