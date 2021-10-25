@@ -1,32 +1,37 @@
 [
     {
         "id": 1,
-        "tasks": "ssl issue",
-        "status": "done",
+        "client": "Mevana Kenya",
+        "issue": "ssl issue",
+        "details": "SSL certificate expired",
         "date": "10-8-2021"
     },
     {
         "id": 2,
-        "tasks": "domain issue",
-        "status": "done",
-        "date": "12-9-2021"
+        "client": "Mevana Kenya",
+        "issue": "ERP Error",
+        "details": "Unable to update stock",
+        "date": "13-8-2021"
     },
     {
         "id": 3,
-        "tasks": "login feature",
-        "status": "pending",
-        "date": "8-10-2021"
+        "client": "Andela Kenya",
+        "issue": "ssl issue",
+        "details": "SSL certificate expired",
+        "date": "14-8-2021"
     },
     {
         "id": 4,
-        "tasks": "integrate MPESA Daraja API",
-        "status": "done",
-        "date": "3-10-2021"
+        "client": "PowerIT Kenya",
+        "issue": "login feature",
+        "details": "cant login to my account",
+        "date": "19-8-2021"
     },
     {
         "id": 5,
-        "tasks": "Deploy API to Heroku",
-        "status": "done",
-        "date": "1-10-2021"
+        "client": "Zalego",
+        "issue": "Website hacked",
+        "details": "Cant access data on our database",
+        "date": "21-8-2021"
     }
 ]

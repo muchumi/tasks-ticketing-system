@@ -30,10 +30,10 @@ const AddTicketsForm = () => {
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         setFormDataError({
-            client: false,
-            issue: false,
-            details: false,
-            date: false
+            client: formDataError.client,
+            issue: formDataError.issue,
+            details: formDataError.details,
+            date: formDataError.date
         });
         const isClientValid = await validateText(formData.client);
         setFormDataError({

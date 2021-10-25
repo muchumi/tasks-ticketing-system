@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import './NewTickets.css';
 
 const NewTickets = ({ dummyTickets }) => {
+    if(!dummyTickets.Length)
     return(
         <div>
             <h1 className="newTicketsHeading">Recently Added Tickets:</h1>
@@ -10,8 +11,9 @@ const NewTickets = ({ dummyTickets }) => {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Tasks</th>
-                        <th>Status</th>
+                        <th>Client</th>
+                        <th>Issue</th>
+                        <th>Details</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -19,8 +21,9 @@ const NewTickets = ({ dummyTickets }) => {
                     {dummyTickets.length ? dummyTickets.map((ticket) => (
                         <tr key={ticket.id}>
                             <td>{ticket.id}</td>
-                            <td>{ticket.tasks}</td>
-                            <td>{ticket.status}</td>
+                            <td>{ticket.client}</td>
+                            <td>{ticket.issue}</td>
+                            <td>{ticket.details}</td>
                             <td>{ticket.date}</td>
                         </tr>
                     )) :
@@ -32,6 +35,6 @@ const NewTickets = ({ dummyTickets }) => {
             </Table>
         </div>
     );
-}
+};
 
 export default NewTickets;
