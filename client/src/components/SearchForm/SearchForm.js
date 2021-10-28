@@ -1,5 +1,6 @@
 import React from 'react';
 import {Form, Row, Col} from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const SearchForm = ({ handleOnChange, string }) => {
     return(
@@ -20,5 +21,8 @@ const SearchForm = ({ handleOnChange, string }) => {
         </div>
     );
 }
-
+SearchForm.propTypes = {
+    handleOnChange: PropTypes.func.isRequired,
+    string: PropTypes.string.isRequired
+}
 export default SearchForm;

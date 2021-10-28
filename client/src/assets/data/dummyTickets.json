@@ -4,6 +4,23 @@
         "client": "Mevana Kenya",
         "issue": "ssl issue",
         "details": "SSL certificate expired",
+        "history": [
+            {
+                "date": "9-7-2021",
+                "message": "Financial records lost",
+                "sender": "James Gordanse"
+            },
+            {
+                "date": "7-7-2021",
+                "message": "ERP won't launch on desktop",
+                "sender": "Michael Simpson"
+            },
+            {
+                "date": "6-7-2021",
+                "message": "ERP won't backup financial records",
+                "sender": "Wycliffe Muchumi"
+            }
+        ],
         "date": "10-8-2021"
     },
     {
