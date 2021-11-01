@@ -6,17 +6,17 @@ import NewTickets from '../NewTickets/NewTickets.js';
 import dummyTickets from '../../assets/data/dummyTickets.json';
 
 const TicketsListing = () => {
-    const[string, setString] = useState({
-        searchString: ""
+    const[stringData, setStringData] = useState({
+        string: ""
     });
 
     const[displayTicket, setDisplayTicket] = useState(dummyTickets);
 
-    useEffect(() => {}, [string, displayTicket]);
+    useEffect(() => {}, [stringData, displayTicket]);
 
     const handleOnChange = (e) => {
         const{value} = e.target;
-        setString(value);
+        setStringData(value);
         searchTicket(value);
     };
 
@@ -37,7 +37,7 @@ const TicketsListing = () => {
                     <Button variant = "info">Add New Task Ticket</Button>
                 </Col>
                 <Col className="text-right">
-                    <SearchForm handleOnChange = {handleOnChange} string = {string.searchString}/>
+                    <SearchForm handleOnChange = {handleOnChange} string = {stringData.string}/>
                 </Col>
             </Row>
             <hr />

@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb';
 import TicketMessage from '../TicketMessage/TicketMessage.js';
 import dummyTickets from '../../assets/data/dummyTickets.json';
+import UpdateTicket from '../UpdateTicket/UpdateTicket';
 
 const ticket = dummyTickets[0];
 const TicketPage = () => {
+
+    const[details, setDetails] = useState('');
+
+    const handleOnChange = () => {
+
+    }
     
     return(
         <Container>
@@ -25,9 +32,15 @@ const TicketPage = () => {
                     <Button variant="outline-info">Close Ticket</Button>
                 </Col>
             </Row>
-            <Row>
+            <Row className="mt-4">
                 <Col>
                     <TicketMessage message={ticket.history}/>
+                </Col>
+            </Row>
+            <hr />
+            <Row>
+                <Col>
+                    <UpdateTicket details = {details} handleOnChange = {handleOnChange} />
                 </Col>
             </Row>
         </Container>

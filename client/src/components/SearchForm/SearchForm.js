@@ -10,7 +10,7 @@ const SearchForm = ({ handleOnChange, string }) => {
                     <Form.Label column sm = "3">Search:</Form.Label>
                     <Col sm = "9">
                         <Form.Control
-                            name = "searchString"
+                            name = "string"
                             value = {string}
                             onChange = {handleOnChange}
                             placeholder = "Search ..."
