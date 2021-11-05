@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb';
 import TicketMessage from '../TicketMessage/TicketMessage.js';
@@ -10,8 +10,16 @@ const TicketPage = () => {
 
     const[details, setDetails] = useState('');
 
-    const handleOnChange = () => {
+    useEffect(() => {
 
+    }, [details]);
+
+    const handleOnChange = (e) => {
+        setDetails(e.target.value);
+    }
+
+    const handleOnSubmit = (e) => {
+        alert('The details have been submitted');
     }
     
     return(
@@ -40,7 +48,11 @@ const TicketPage = () => {
             <hr />
             <Row>
                 <Col>
-                    <UpdateTicket details = {details} handleOnChange = {handleOnChange} />
+                    <UpdateTicket 
+                        details = {details} 
+                        handleOnChange = {handleOnChange}
+                        handleOnSubmit = {handleOnSubmit} 
+                    />
                 </Col>
             </Row>
         </Container>
