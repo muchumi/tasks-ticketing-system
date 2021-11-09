@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Container, Row, Col, Button} from 'react-bootstrap';
+import Header from '../Layout/Includes/Header/Header.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import SearchForm from '../SearchForm/SearchForm.js';
 import NewTickets from '../NewTickets/NewTickets.js';
@@ -26,27 +27,34 @@ const TicketsListing = () => {
     };
 
     return (
-        <Container>
+        <div>
             <Row>
                 <Col>
-                    <PageBreadcrumb page = "Tickets List"/>
+                    <Header />
                 </Col>
             </Row>
-            <Row className="mt-4">
-                <Col>
-                    <Button variant = "info">Add New Task Ticket</Button>
-                </Col>
-                <Col className="text-right">
-                    <SearchForm handleOnChange = {handleOnChange} string = {stringData.string}/>
-                </Col>
-            </Row>
-            <hr />
-            <Row>
-                <Col>
-                    <NewTickets dummyTickets = {displayTicket}/>
-                </Col>
-            </Row>
-        </Container>
+            <Container>
+                <Row className = "mt-3">
+                    <Col>
+                        <PageBreadcrumb page = "Tickets List"/>
+                    </Col>
+                </Row>
+                <Row className="mt-4">
+                    <Col>
+                        <Button variant = "info">Add New Task Ticket</Button>
+                    </Col>
+                    <Col className="text-right">
+                        <SearchForm handleOnChange = {handleOnChange} string = {stringData.string}/>
+                    </Col>
+                </Row>
+                <hr />
+                <Row>
+                    <Col>
+                        <NewTickets dummyTickets = {displayTicket}/>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 }
 

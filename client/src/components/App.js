@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link  } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link  } from 'react-router-dom';
 import Home from '../components/Home/Home.js';
 import Layout from '../components/Layout/Layout.js';
 import AddTicketsForm from '../components/AddTicketsForm/AddTicketsForm.js';
@@ -13,23 +13,23 @@ const App = () => {
     return(
         <div className="App">
             <Router>
-                <Routes>
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
                     <Route path="/dashboard">
                         <Dashboard />
-                    </Route>
-                    <Route path="/tickets">
-                        <TicketsListing />
-                    </Route>
-                    <Route path="/tickets/ticket_id">
-                        <TicketPage />
                     </Route>
                     <Route path="/add-tickets-form">
                         <AddTicketsForm />
                     </Route>
-                    <Route exact path="/">
-                        <Home />
+                    <Route path="/tickets">
+                        <TicketsListing />
                     </Route>
-                </Routes>
+                    <Route path="/tickets/:ticket_id">
+                        <TicketPage />
+                    </Route>
+                </Switch>
             </Router>
         </div>
     );
