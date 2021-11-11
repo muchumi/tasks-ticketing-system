@@ -7,6 +7,7 @@ import TicketsListing from './TicketsListing/TicketsListing.js';
 import './App.css';
 import TicketPage from './TicketPage/TicketPage.js';
 import Dashboard from './Dashboard/Dashboard.js';
+import PrivateRoute from './PrivateRoute/PrivateRoute.js';
 
 
 const App = () => {
@@ -14,21 +15,21 @@ const App = () => {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route exact path="/">
+                    <PrivateRoute exact path="/">
                         <Home />
-                    </Route>
-                    <Route path="/dashboard">
+                    </PrivateRoute>
+                    <PrivateRoute path="/dashboard">
                         <Dashboard />
-                    </Route>
-                    <Route path="/add-tickets-form">
+                    </PrivateRoute>
+                    <PrivateRoute path="/add-tickets-form">
                         <AddTicketsForm />
-                    </Route>
-                    <Route path="/tickets">
+                    </PrivateRoute>
+                    <PrivateRoute path="/tickets">
                         <TicketsListing />
-                    </Route>
-                    <Route path="/tickets/:ticket_id">
+                    </PrivateRoute>
+                    <PrivateRoute path="/tickets/:ticket_id">
                         <TicketPage />
-                    </Route>
+                    </PrivateRoute>
                 </Switch>
             </Router>
         </div>

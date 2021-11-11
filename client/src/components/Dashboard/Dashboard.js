@@ -4,16 +4,10 @@ import NewTickets from '../NewTickets/NewTickets.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import './Dashboard.css';
 import dummyTickets from '../../assets/data/dummyTickets.json';
-import Header from '../Layout/Includes/Header/Header.js';
 
 const Dashboard = () => {
     return(
         <div className="dashboard">
-            <Row>
-                <Col>
-                    <Header />
-                </Col>
-            </Row>
             <Container className="mt-3">
                 <Row className="background">
                     <Col>
