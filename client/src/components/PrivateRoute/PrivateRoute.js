@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import Layout from '../Layout/Layout.js';
 
 const isAuth = true;
-const PrivateRoute = ({ children, ...rest}) => {
+const PrivateRoute = ({children, ...rest}) => {
     return(
         <Route
             render = {() => 

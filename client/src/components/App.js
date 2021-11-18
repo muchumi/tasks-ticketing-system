@@ -15,9 +15,9 @@ const App = () => {
         <div className="App">
             <Router>
                 <Switch>
-                    <PrivateRoute exact path="/">
+                    <Route exact path="/">
                         <Home />
-                    </PrivateRoute>
+                    </Route>
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>

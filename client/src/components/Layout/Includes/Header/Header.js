@@ -10,7 +10,7 @@ const Header = () => {
 
     const logOut = () => {
         history.push("/");
-    }
+    };
 
     return(
         <Navbar collapseOnSelect bg="info" variant="dark" expand="md">

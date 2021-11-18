@@ -4,6 +4,7 @@ import NewTickets from '../NewTickets/NewTickets.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import './Dashboard.css';
 import dummyTickets from '../../assets/data/dummyTickets.json';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     return(
@@ -18,7 +19,9 @@ const Dashboard = () => {
             <Container>
                 <Row>
                     <Col className="text-center mt-5 mb-2">
-                        <Button variant="info" className="addTicketButton">Add New Task Ticket</Button>
+                        <Link to="/add-tickets-form">
+                            <Button variant="info" className="addTicketButton">Add New Task Ticket</Button>
+                        </Link>
                     </Col>
                 </Row>
                 <Row>
