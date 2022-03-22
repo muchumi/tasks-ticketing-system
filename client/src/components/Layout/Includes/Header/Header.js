@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import logo from '../../../../assets/images/logo.png';
+import TicketPage from '../../../TicketPage/TicketPage.js'
 
 const Header = () => {
 
@@ -24,7 +25,7 @@ const Header = () => {
                         <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to="/tickets">
-                        <Nav.Link>Tickets</Nav.Link>
+                        <Nav.Link onClick={TicketPage}>Tickets</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to="">
                         <Nav.Link onClick={logOut}>Logout</Nav.Link>
