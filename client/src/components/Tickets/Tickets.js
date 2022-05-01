@@ -6,18 +6,14 @@ import dummyTickets from '../../assets/data/dummyTickets.json';
 import UpdateTicket from '../UpdateTicket/UpdateTicket';
 
 const ticket = dummyTickets[0];
-const TicketPage = () => {
-
+const Tickets = () => {
     const[details, setDetails] = useState('');
-
     useEffect(() => {
-
     }, [details]);
-
     const handleOnChange = (e) => {
         setDetails(e.target.value);
     }
-
+    console.log(details);
     const handleOnSubmit = (e) => {
         alert('The details have been submitted');
     }
@@ -59,4 +55,4 @@ const TicketPage = () => {
     );
 }
 
-export default TicketPage;
+export default Tickets;

@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout.js';
 import AddTicketsForm from '../components/AddTicketsForm/AddTicketsForm.js';
 import TicketsListing from './TicketsListing/TicketsListing.js';
 import './App.css';
-import TicketPage from './TicketPage/TicketPage.js';
+import Ticket from './Tickets/Tickets.js';
 import Dashboard from './Dashboard/Dashboard.js';
 import PrivateRoute from './PrivateRoute/PrivateRoute.js';
 
@@ -28,7 +28,7 @@ const App = () => {
                         <TicketsListing />
                     </PrivateRoute>
                     <PrivateRoute path="/tickets/:ticket_id">
-                        <TicketPage />
+                        <Ticket />
                     </PrivateRoute>
                 </Switch>
             </Router>

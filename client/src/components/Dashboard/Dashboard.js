@@ -3,8 +3,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import NewTickets from '../NewTickets/NewTickets.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import './Dashboard.css';
+import AddTicketsForm from '../AddTicketsForm/AddTicketsForm.js';
 import dummyTickets from '../../assets/data/dummyTickets.json';
 import { Link } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Dashboard = () => {
     return(
@@ -19,9 +21,9 @@ const Dashboard = () => {
             <Container>
                 <Row>
                     <Col className="text-center mt-5 mb-2">
-                        <Link to="/add-tickets-form">
-                            <Button variant="info" className="addTicketButton">Add New Task Ticket</Button>
-                        </Link>
+                        <LinkContainer to="/add-tickets">
+                            <Button variant="info" className="addTicketButton" onClick={AddTicketsForm}>Add New Task Ticket</Button>
+                        </LinkContainer>
                     </Col>
                 </Row>
                 <Row>
