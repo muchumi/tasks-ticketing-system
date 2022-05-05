@@ -28,6 +28,7 @@ const AddTicketsForm = () => {
     }
 
     const handleOnSubmit = async (e) => {
+        // Prevents a browser reload/refresh when submitting a form
         e.preventDefault();
         setFormDataError({
             client: formDataError.client,
@@ -42,8 +43,6 @@ const AddTicketsForm = () => {
     }
     return(
         <div className="add-ticket bg-light">
-            {/* <h1 className="text-info text-center">Add A New Ticket</h1>
-            <hr/> */}
             <Form autoComplete = "off" onSubmit = { handleOnSubmit }>
                 <Form.Group as={Row}>
                     <Form.Label column sm={3}>Client</Form.Label>

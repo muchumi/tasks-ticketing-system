@@ -7,6 +7,7 @@ import AddTicketsForm from '../AddTicketsForm/AddTicketsForm.js';
 import dummyTickets from '../../assets/data/dummyTickets.json';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
+import SearchForm from '../SearchForm/SearchForm.js';
 
 const Dashboard = () => {
     return(
