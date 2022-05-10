@@ -21,7 +21,7 @@ const App = () => {
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>
-                    <PrivateRoute path="/add-tickets-form">
+                    <PrivateRoute path="/add-tickets">
                         <AddTicketsForm />
                     </PrivateRoute>
                     <PrivateRoute path="/tickets">

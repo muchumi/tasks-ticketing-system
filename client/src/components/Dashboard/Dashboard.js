@@ -20,19 +20,22 @@ const Dashboard = () => {
                 </Row>
             </Container>
             <Container>
-                <Row>
-                    <Col className="text-center mt-5 mb-2">
+                <Row className="mt-5 mb-2">
+                    <Col>
                         <LinkContainer to="/add-tickets">
-                            <Button variant="info" className="addTicketButton" onClick={AddTicketsForm}>Add New Task Ticket</Button>
+                            <Button variant="info">Add New Task Ticket</Button>
                         </LinkContainer>
                     </Col>
+                    <Col className="text-right">
+                        <SearchForm />
+                    </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                     <Col className="text-center mb-2">
                         <div>Total Tickets: 5000</div>
                         <div>Pending Tickets: 2100</div>
                     </Col>
-                </Row>
+                </Row> */}
                 <Row>
                     <Col className="mt-2 new-tickets">
                         <NewTickets dummyTickets={dummyTickets}/>
