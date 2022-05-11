@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import NewTickets from '../NewTickets/NewTickets.js';
+import TicketsList from '../TicketsList/TicketsList.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import './Dashboard.css';
 import AddTicketsForm from '../AddTicketsForm/AddTicketsForm.js';
@@ -10,6 +10,11 @@ import { LinkContainer } from 'react-router-bootstrap';
 import SearchForm from '../SearchForm/SearchForm.js';
 
 const Dashboard = () => {
+    const [string, setString] = useState('');
+    useEffect(() => {}, [string]);
+    const handleOnChange = e => {
+        setString(e.target.value);
+    }
     return(
         <div className="dashboard">
             <Container className="mt-3">
@@ -20,25 +25,19 @@ const Dashboard = () => {
                 </Row>
             </Container>
             <Container>
-                <Row className="mt-5 mb-2">
+                <Row className="mt-4">
                     <Col>
                         <LinkContainer to="/add-tickets">
                             <Button variant="info">Add New Task Ticket</Button>
                         </LinkContainer>
                     </Col>
                     <Col className="text-right">
-                        <SearchForm />
+                        <SearchForm handleOnChange={handleOnChange} string={string}/>
                     </Col>
                 </Row>
-                {/* <Row>
-                    <Col className="text-center mb-2">
-                        <div>Total Tickets: 5000</div>
-                        <div>Pending Tickets: 2100</div>
-                    </Col>
-                </Row> */}
                 <Row>
                     <Col className="mt-2 new-tickets">
-                        <NewTickets dummyTickets={dummyTickets}/>
+                        <TicketsList dummyTickets={dummyTickets}/>
                     </Col>
                 </Row>
             </Container>

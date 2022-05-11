@@ -1,8 +1,8 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import './NewTickets.css';
+import './TicketsList.css';
 
-const NewTickets = ({ dummyTickets }) => {
+const TicketsList = ({ dummyTickets }) => {
     if(!dummyTickets.Length)
     return(
         <div>
@@ -37,4 +37,4 @@ const NewTickets = ({ dummyTickets }) => {
     );
 };
 
-export default NewTickets;
+export default TicketsList;

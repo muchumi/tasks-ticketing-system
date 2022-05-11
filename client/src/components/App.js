@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link  } from 'react-router-dom'
 import Home from '../components/Home/Home.js';
 import Layout from '../components/Layout/Layout.js';
 import AddTicketsForm from '../components/AddTicketsForm/AddTicketsForm.js';
-import TicketsListing from './TicketsListing/TicketsListing.js';
 import './App.css';
 import Ticket from './Tickets/Tickets.js';
 import Dashboard from './Dashboard/Dashboard.js';
@@ -21,14 +20,11 @@ const App = () => {
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>
-                    <PrivateRoute path="/add-tickets">
-                        <AddTicketsForm />
-                    </PrivateRoute>
-                    <PrivateRoute path="/tickets">
-                        <TicketsListing />
-                    </PrivateRoute>
                     <PrivateRoute path="/tickets/:ticket_id">
                         <Ticket />
+                    </PrivateRoute>
+                    <PrivateRoute path="/add-tickets">
+                        <AddTicketsForm />
                     </PrivateRoute>
                 </Switch>
             </Router>
