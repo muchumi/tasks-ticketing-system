@@ -3,7 +3,7 @@ import {Form, Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const SearchForm = ({ handleOnChange, string }) => {
-    console.log(string);
+    console.log(string);       
     return(
         <div>
             <Form autoComplete="off">

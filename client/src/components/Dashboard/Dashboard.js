@@ -10,11 +10,27 @@ import { LinkContainer } from 'react-router-bootstrap';
 import SearchForm from '../SearchForm/SearchForm.js';
 
 const Dashboard = () => {
+
     const [string, setString] = useState('');
-    useEffect(() => {}, [string]);
+
+    const [displayTicket, setDisplayTicket] = useState([]);
+
+    useEffect(() => {
+        setDisplayTicket(dummyTickets);
+    }, [string, displayTicket]);
+
     const handleOnChange = e => {
-        setString(e.target.value);
+        const {value} = e.target.value;
+        setString(value);
+        searchTicket(value);
     }
+
+    const searchTicket = string => {
+        const displayTickets = dummyTickets.filter(row => row.subject.toLowerCase().includes(string).toLowerCase())
+
+        setDisplayTicket(displayTickets);
+    }
+
     return(
         <div className="dashboard">
             <Container className="mt-3">
@@ -37,7 +53,7 @@ const Dashboard = () => {
                 </Row>
                 <Row>
                     <Col className="mt-2 new-tickets">
-                        <TicketsList dummyTickets={dummyTickets}/>
+                        <TicketsList dummyTickets={displayTicket}/>
                     </Col>
                 </Row>
             </Container>
