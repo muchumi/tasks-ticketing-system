@@ -21,34 +21,39 @@
                 "sender": "Wycliffe Muchumi"
             }
         ],
-        "date": "10-8-2021"
+        "date": "10-8-2021",
+        "status": "Done"
     },
     {
         "id": 2,
         "client": "Mevana Kenya",
         "issue": "ERP Error",
         "details": "Unable to update stock",
-        "date": "13-8-2021"
+        "date": "13-8-2021",
+        "status": "Pending"
     },
     {
         "id": 3,
         "client": "Andela Kenya",
         "issue": "ssl issue",
         "details": "SSL certificate expired",
-        "date": "14-8-2021"
+        "date": "14-8-2021",
+        "status": "Done"
     },
     {
         "id": 4,
         "client": "PowerIT Kenya",
         "issue": "login feature",
         "details": "cant login to my account",
-        "date": "19-8-2021"
+        "date": "19-8-2021",
+        "status": "Pending"
     },
     {
         "id": 5,
         "client": "Zalego",
         "issue": "Website hacked",
         "details": "Cant access data on our database",
-        "date": "21-8-2021"
+        "date": "21-8-2021",
+        "status": "Pending"
     }
 ]

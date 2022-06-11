@@ -13,24 +13,20 @@ const Dashboard = () => {
 
     const [string, setString] = useState('');
 
-    const [displayTicket, setDisplayTicket] = useState([]);
+    const [displayTicket, setDisplayTicket] = useState(dummyTickets);
 
-    useEffect(() => {
-        setDisplayTicket(dummyTickets);
-    }, [string, displayTicket]);
+    useEffect(() => {}, [string, displayTicket]);
 
     const handleOnChange = e => {
-        const {value} = e.target.value;
+        const {value} = e.target;
         setString(value);
         searchTicket(value);
     }
 
     const searchTicket = string => {
-        const displayTickets = dummyTickets.filter(row => row.subject.toLowerCase().includes(string).toLowerCase())
-
+        const displayTickets = dummyTickets.filter(row => row.issue.toLowerCase().includes(string.toLowerCase()));
         setDisplayTicket(displayTickets);
-    }
-
+    };
     return(
         <div className="dashboard">
             <Container className="mt-3">
