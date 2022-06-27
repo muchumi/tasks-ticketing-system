@@ -4,7 +4,7 @@ import Home from '../components/Home/Home.js';
 import Layout from '../components/Layout/Layout.js';
 import AddTicketsForm from '../components/AddTicketsForm/AddTicketsForm.js';
 import './App.css';
-import Ticket from './Ticket/Ticket.js';
+import TicketsList from './TicketsList/TicketsList.js';
 import Dashboard from './Dashboard/Dashboard.js';
 import PrivateRoute from './PrivateRoute/PrivateRoute.js';
 
@@ -12,7 +12,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute.js';
 const App = () => {
     return(
         <div className="App">
-            {/* <Router>
+            <Router>
                 <Switch>
                     <Route exact path="/">
                         <Home />
@@ -20,15 +20,14 @@ const App = () => {
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>
-                    <PrivateRoute path="/ticket/:ticket_id">
-                        <Ticket />
+                    <PrivateRoute path="/tickets/:ticket_id">
+                        <TicketsList />
                     </PrivateRoute>
                     <PrivateRoute path="/add-tickets">
                         <AddTicketsForm />
                     </PrivateRoute>
                 </Switch>
-            </Router> */}
-            <Ticket />
+            </Router>
         </div>
     );
 }
