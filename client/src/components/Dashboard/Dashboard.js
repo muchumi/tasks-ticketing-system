@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import TicketsList from '../TicketsList/TicketsList.js';
 import PageBreadcrumb from '../Breadcrumb/Breadcrumb.js';
 import './Dashboard.css';
-import AddTicketsForm from '../AddTicketsForm/AddTicketsForm.js';
 import dummyTickets from '../../assets/data/dummyTickets.json';
-import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
 import SearchForm from '../SearchForm/SearchForm.js';
 
 const Dashboard = () => {
@@ -39,9 +37,9 @@ const Dashboard = () => {
             <Container>
                 <Row className="mt-4">
                     <Col>
-                        <LinkContainer to="/add-tickets">
-                            <Button variant="info">Add New Task Ticket</Button>
-                        </LinkContainer>
+                        <Link to="/add-tickets">
+                            <Button variant="info">Add New Ticket</Button>
+                        </Link>
                     </Col>
                     <Col className="text-right">
                         <SearchForm handleOnChange={handleOnChange} string={string}/>

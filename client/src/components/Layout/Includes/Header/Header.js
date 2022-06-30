@@ -3,7 +3,6 @@ import {Navbar, Nav} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
 import logo from '../../../../assets/images/logo.png';
-import TicketsList from '../../../TicketsList/TicketsList.js'
 
 const Header = () => {
 
@@ -23,9 +22,6 @@ const Header = () => {
                 <Nav className="ml-auto">
                     <LinkContainer to="/dashboard">
                         <Nav.Link>Dashboard</Nav.Link>
-                    </LinkContainer>
-                    <LinkContainer to="/tickets">
-                        <Nav.Link onClick={TicketsList}>Tickets</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to="">
                         <Nav.Link onClick={logOut}>Logout</Nav.Link>

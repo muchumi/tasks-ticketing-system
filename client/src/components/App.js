@@ -1,12 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link  } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from '../components/Home/Home.js';
-import Layout from '../components/Layout/Layout.js';
 import AddTicketsForm from '../components/AddTicketsForm/AddTicketsForm.js';
 import './App.css';
-import TicketsList from './TicketsList/TicketsList.js';
-import Dashboard from './Dashboard/Dashboard.js';
 import PrivateRoute from './PrivateRoute/PrivateRoute.js';
+import Dashboard from './Dashboard/Dashboard.js';
+import Ticket from './Ticket/Ticket.js';
 
 
 const App = () => {
@@ -20,11 +19,11 @@ const App = () => {
                     <PrivateRoute path="/dashboard">
                         <Dashboard />
                     </PrivateRoute>
-                    <PrivateRoute path="/tickets/:ticket_id">
-                        <TicketsList />
-                    </PrivateRoute>
                     <PrivateRoute path="/add-tickets">
                         <AddTicketsForm />
+                    </PrivateRoute>
+                    <PrivateRoute path="/tickets/ticket_id">
+                        <Ticket/>
                     </PrivateRoute>
                 </Switch>
             </Router>
