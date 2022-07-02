@@ -7,6 +7,7 @@ import './Dashboard.css';
 import dummyTickets from '../../assets/data/dummyTickets.json';
 import SearchForm from '../SearchForm/SearchForm.js';
 
+
 const Dashboard = () => {
 
     const [string, setString] = useState('');
@@ -37,7 +38,7 @@ const Dashboard = () => {
             <Container>
                 <Row className="mt-4">
                     <Col>
-                        <Link to="/add-tickets">
+                        <Link to="/add-ticket">
                             <Button variant="info">Add New Ticket</Button>
                         </Link>
                     </Col>

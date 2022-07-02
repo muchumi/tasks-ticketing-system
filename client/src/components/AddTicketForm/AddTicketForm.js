@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
-import './AddTicketsForm.css';
+import './AddTicketForm.css';
 import validateText from '../../utils/validation.js';
 
-const AddTicketsForm = () => {
+const AddTicket = () => {
     const[formData, setFormData] = useState({
         client: "",
         issue: "",
@@ -99,4 +99,4 @@ const AddTicketsForm = () => {
     );
 }
 
-export default AddTicketsForm;
+export default AddTicket;
