@@ -3,7 +3,7 @@ import { Row, Col, Form, Button } from 'react-bootstrap';
 import './AddTicketForm.css';
 import validateText from '../../utils/validation.js';
 
-const AddTicket = () => {
+const AddTicketForm = () => {
     const[formData, setFormData] = useState({
         client: "",
         issue: "",
@@ -99,4 +99,4 @@ const AddTicket = () => {
     );
 }
 
-export default AddTicket;
+export default AddTicketForm;

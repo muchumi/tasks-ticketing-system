@@ -34,12 +34,12 @@ const Dashboard = () => {
                         <PageBreadcrumb page="Dashboard"/>
                     </Col>
                 </Row>
-            </Container>
-            <Container>
                 <Row className="mt-4">
                     <Col>
                         <Link to="/add-ticket">
-                            <Button variant="info">Add New Ticket</Button>
+                            <Button variant="info" style={{fontSize: "1rem", borderradius: "none"}}>
+                                Add New Ticket
+                            </Button>
                         </Link>
                     </Col>
                     <Col className="text-right">
