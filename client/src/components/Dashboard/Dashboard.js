@@ -7,7 +7,6 @@ import './Dashboard.css';
 import dummyTickets from '../../assets/data/dummyTickets.json';
 import SearchForm from '../SearchForm/SearchForm.js';
 
-
 const Dashboard = () => {
 
     const [string, setString] = useState('');
@@ -37,7 +36,7 @@ const Dashboard = () => {
                 <Row className="mt-4">
                     <Col>
                         <Link to="/add-ticket">
-                            <Button variant="info" style={{fontSize: "1rem", borderradius: "none"}}>
+                            <Button variant="info" style={{fontSize: "1rem", borderRadius: "none"}}>
                                 Add New Ticket
                             </Button>
                         </Link>
