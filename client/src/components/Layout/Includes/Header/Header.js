@@ -1,15 +1,15 @@
 import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
-import {useNavigate} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
 import logo from '../../../../assets/images/logo.png';
 
 const Header = () => {
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const logOut = () => {
-        navigate.push("/");
+        history.push("/");
     };
 
     return(
